@@ -7,4 +7,9 @@ lazy val root = (project in file("."))
     name := "scala_tdd"
   )
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.12" % "test"
+libraryDependencies ++= Seq(
+  "org.scalatest" %% "scalatest" % "3.2.12" % "test",
+  "io.cucumber" %% "cucumber-scala" % "8.9.0" % "test",
+  "io.cucumber" % "cucumber-junit" % "7.7.0" % "test",
+  "junit" % "junit" % "4.13.2" % "test"
+)

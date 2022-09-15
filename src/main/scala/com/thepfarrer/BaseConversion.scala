@@ -36,27 +36,27 @@ object BaseConversion {
       case 'D' | 'd' => 13
       case 'E' | 'e' => 14
       case 'F' | 'f' => 15
-      case n         => n - '0'
+      case n => n - '0'
     }.zipWithIndex.map { case (x, y) =>
       x * math.pow(base, y)
     }.sum.toInt.toString
 
-  def decimalToHexadecimal(x: Decimal): Hexadecimal =
-    Hexadecimal(toNoneDecimal(x.number.toInt, 16))
+  def decimalToHexadecimal(decimal: Number): Hexadecimal =
+    Hexadecimal(toNoneDecimal(decimal.number.toInt, 16))
 
-  def hexadecimalToDecimal(x: Hexadecimal): Decimal =
-    Decimal(toDecimal(x.number, 16))
+  def hexadecimalToDecimal(hexadecimal: Number): Decimal =
+    Decimal(toDecimal(hexadecimal.number, 16))
 
-  def decimalToOctal(x: Decimal): Octal =
-    Octal(toNoneDecimal(x.number.toInt, 8))
+  def decimalToOctal(decimal: Number): Octal =
+    Octal(toNoneDecimal(decimal.number.toInt, 8))
 
-  def hexadecimalToDecimal(x: Octal): Decimal =
-    Decimal(toDecimal(x.number, 8))
+  def octalToDecimal(octal: Number): Decimal =
+    Decimal(toDecimal(octal.number, 8))
 
-  def binaryToDecimal(x: Binary): Decimal =
-    Decimal(toDecimal(x.number, 2))
+  def binaryToDecimal(binary: Number): Decimal =
+    Decimal(toDecimal(binary.number, 2))
 
-  def decimalToBinary(x: Decimal): Binary =
-    Binary(toBinary(BigInt(x.number), ""))
+  def decimalToBinary(decimal: Number): Binary =
+    Binary(toBinary(BigInt(decimal.number), ""))
 
 }

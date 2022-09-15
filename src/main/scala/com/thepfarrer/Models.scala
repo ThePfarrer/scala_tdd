@@ -8,6 +8,8 @@ trait Number {
   )
 }
 case class Decimal(number: String)     extends Number
-case class Binary(number: String)      extends Number
-case class Octal(number: String)      extends Number
+case class Binary(number: String) extends Number
+
+case class Octal(number: String) extends Number
+
 case class Hexadecimal(number: String) extends Number
