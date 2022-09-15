@@ -19,7 +19,7 @@ class DecimalToHexadecimalSpec extends UnitSpec with TableDrivenPropertyChecks {
     val validCombos = Table(
       ("1243", "4DB"),
       ("11111122", "A98AD2"),
-//      ("2435255412343", "2370088A677"),
+      ("2435255412343", "2370088A677"),
       ("8765432", "85BFF8")
     )
     forAll(validCombos) { (decStr: String, hexStr: String) =>
